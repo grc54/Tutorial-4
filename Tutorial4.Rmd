@@ -2,9 +2,42 @@
 Title: "Learning to reference figures, tables and sections"
 author: "Guan Ru Chen"
 Date: "`r Sys.Date()`"
-output:
-bookdown::html_document2
+output: html_document
 keep_md: true
 ---
 
-       
+```{r}
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+```
+
+```{r}
+install.packages("tidyverse")
+install.packages("knitr")
+install.packages("dplyr")
+library(tidyverse)
+library(knitr)
+library(dplyr)
+```
+
+# Learing to reference figures.
+
+```{r Figure, fig.caption= "This is random noise"}
+x= seq(1:100)
+y= rnorm(100)
+
+dat= data.frame(x, y) 
+
+ggplot(dat, aes(x= x, y= y )) +
+  geom_line()
+
+```
+See figure \@ref(fig:Figure)
+
+# Learing to reference tables
+
+```{r Table}
+head(dat, 5) 
+  kable(dat, caption = "This is common moise")
+```
+
+See Table \@ref(tab:Table)
