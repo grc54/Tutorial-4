@@ -1,7 +1,7 @@
 ---
 Title: "Learning to reference figures, tables and sections"
 author: "Guan Ru Chen"
-Date: "2022 03 25"
+Date: "`r Sys.Date()`"
 output:
 bookdown::html_document2
 keep_md: true
